@@ -1,0 +1,13 @@
+{
+  "name": "com.heavyfront.tomato-entity-drawer",
+  "version": "1.0.0",
+  "displayName": "Tomato Entity Drawer",
+  "description": "Visual debug instrument for tomato ECS",
+  "unity": "2022.1",
+  "dependencies": {
+    "com.npg.tomato-ecs": "1.1.0"
+  },
+  "author": {
+    "name": "Heavyfront"
+  }
+}
