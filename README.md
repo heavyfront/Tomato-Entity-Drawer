@@ -73,7 +73,7 @@ In debug mode you can add, remove, and edit components
 
 ![img_1.png](img_1.png)
 
-You can also use debugging on entities without display using the TomatoContextObject object.
+You can also use debugging on entities without view object, using the TomatoContextObject object.
 Just enter entity ID and press get entity button.
 
 ![img_2.png](img_2.png)
