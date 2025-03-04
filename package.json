@@ -4,8 +4,12 @@
   "displayName": "Tomato Entity Drawer",
   "description": "Visual debug instrument for tomato ECS",
   "unity": "2022.1",
+  "repository": {
+    "type": "git",
+    "url": "git+http://github.com/heavyfront/Tomato-Entity-Drawer.git"
+  },
   "dependencies": {
-    "com.npg.tomato-ecs": "git+https://github.com/natpuncher/tomato-ecs.git"
+    "com.npg.tomato-ecs": "https://github.com/natpuncher/tomato-ecs.git#v1.1.0"
   },
   "author": {
     "name": "Heavyfront"
