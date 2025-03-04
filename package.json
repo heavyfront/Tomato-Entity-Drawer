@@ -9,7 +9,7 @@
     "url": "git+http://github.com/heavyfront/Tomato-Entity-Drawer.git"
   },
   "dependencies": {
-    "com.npg.tomato-ecs": "git+https://github.com/natpuncher/tomato-ecs.git#1.1.0"
+    "com.natpuncher.tomato-ecs": "https://github.com/natpuncher/tomato-ecs.git?path=/Packages/com.natpuncher.tomato-ecs#1.1.0"
   },
   "author": {
     "name": "Heavyfront"
