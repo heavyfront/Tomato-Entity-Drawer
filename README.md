@@ -4,39 +4,25 @@ Visual debug for Tomato ECS. Allows you to see and modify components and values 
 
 ## How to Install
 
-Simply download the library into your Unity project and access the utilities across your scripts or import it in Unity
-with
-the Unity Package Manager using this URL:
+First u need to install tomato ECS from
+`https://github.com/natpuncher/tomato-ecs.git`
+
+Then install drawer using package manager install from Git URL
 
 `https://github.com/heavyfront/Tomato-Entity-Drawer.git`
 
 ## How to use
 
-To view and edit any entities (without view), you need to create an object on the scene and initialize it.
-For example, in the place where you have the initialization of the ECS
+You can inherit your context from BaseContext and your views from EntityView
 
 ```csharp
+    public class EnemyView : EntityView
+    {
 
- public void Initialize()
-        {
-            // your initialization
-            var go = new GameObject("WorldContextObject");
-            Object.DontDestroyOnLoad(go);
-            _tomatoContextObject = go.AddComponent<TomatoContextObject>();
-            _tomatoContextObject.Initialize(_context);
-
-        }
-
-```
-
-To view and edit entities with view, that are present on the scene, you can create a base class for the visual (in my case, it is
-EntityView), create the EntityId property inside and set it when creating object. Now you just need to inherit all other
-views from this class. In this case, the Entity mode flag will appear in the inspector on such an object. When it is
-enabled, the entity components for this object will be displayed.
-
-```csharp
-
-  public abstract class EntityView : MonoBehaviour
+    }
+    
+    
+    public abstract class EntityView : MonoBehaviour
     {
         [SerializeField, ReadOnly] protected uint _entityId;
 
@@ -47,6 +33,38 @@ enabled, the entity components for this object will be displayed.
             _isEntityCreated = true;
             _entityId = id;
         }
+    }
+```
 
+Then you need to initialize context game object in any place you want. I prefer do it in ESC initialization
+
+```csharp
+
+ public void Initialize()
+        {
+            _context = new WorldContext();  // you need to get instance of context from anywhere u want
+           
+            // create context game object and initialize it
+            var cgo = new GameObject("WorldContextObject");
+            DontDestroyOnLoad(cgo);
+            _tomatoContextObject = cgo.AddComponent<TomatoContextObject>();
+            _tomatoContextObject.Initialize(_context);
+            
+            // Now you can use ECS as usual with one condition. You need to use SetupData every time you create any view.
+            var entity = _context.CreateEntity();
+            var go = new GameObject("EntityView");
+            
+            
+            var view = go.AddComponent<EnemyView>();
+            
+            
+            view.SetupData(entity.Id); // it needed for  visual debugging using view object
+            
+            
+            entity.AddComponent<TestComponent>().Value = 12235256;
+
+        }
 
 ```
+![img.png](img.png)
+![img_1.png](img_1.png)
