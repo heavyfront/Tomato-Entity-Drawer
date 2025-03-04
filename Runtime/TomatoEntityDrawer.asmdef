@@ -1,7 +1,9 @@
 {
     "name": "TomatoEntityDrawer",
     "rootNamespace": "TomatoEntityDrawer",
-    "references": [],
+    "references": [
+        "GUID:6f9e1a864730148519373af51babcaea"
+    ],
     "includePlatforms": [],
     "excludePlatforms": [],
     "allowUnsafeCode": false,

@@ -3,8 +3,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using _Project.Scripts.Ecs.Infrastructure;
-using _Project.Scripts.Infrastructure.BaseViews;
 using npg.tomatoecs;
 using npg.tomatoecs.Entities;
 using UnityEditor;
@@ -54,10 +52,10 @@ namespace TomatoEntityDrawer
             }
             _isInitialized = true;
             _hasComponentMethod = typeof(Entity).GetMethod("HasComponent", new Type[] { });
-            _addComponentMethod = typeof(WorldContext).GetMethod("AddComponent", new Type[] { typeof(Entity) });
+            _addComponentMethod = typeof(BaseContext).GetMethod("AddComponent", new Type[] { typeof(Entity) });
             _removeComponentMethod = typeof(Entity).GetMethod("RemoveComponent", new Type[] { });
-            _getComponentMethod = typeof(WorldContext).GetMethod("GetComponent", new Type[] { typeof(Entity) });
-            _setComponentMethod = typeof(WorldContext).GetMethod("SetComponent");
+            _getComponentMethod = typeof(BaseContext).GetMethod("GetComponent", new Type[] { typeof(Entity) });
+            _setComponentMethod = typeof(BaseContext).GetMethod("SetComponent");
             var worlContext = FindAnyObjectByType<TomatoContextObject>();
             if (worlContext == null)
             {
