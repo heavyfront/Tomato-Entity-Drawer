@@ -67,11 +67,14 @@ Then you need to initialize context game object in any place you want. I prefer 
 
 ```
 Now you can see checkbox Entity mode on any EntityView object. It allows you to switch between standard and debug modes.
+
 ![img.png](img.png)
 
 In debug mode you can add, remove, and edit components
+
 ![img_1.png](img_1.png)
 
 You can also use debugging on entities without display using the TomatoContextObject object.
 Just enter entity ID and press get entity button.
+
 ![img_2.png](img_2.png)
