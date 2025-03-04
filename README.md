@@ -30,7 +30,6 @@ You can inherit your context from BaseContext and your views from EntityView
 
         public void SetupData(uint id)
         {
-            _isEntityCreated = true;
             _entityId = id;
         }
     }
