@@ -34,8 +34,17 @@ You can inherit your context from BaseContext and your views from EntityView
         }
     }
 ```
+Add the ITomatoComponent interface to your components
 
-Then you need to initialize context game object in any place you want. I prefer do it in ESC initialization
+```csharp
+    public struct TestComponent : ITomatoComponent
+    {
+        public int Value;
+    }
+```
+
+Then you need to initialize context game object in any place you want. I prefer do it in ESC initialization.
+
 
 ```csharp
 
@@ -65,6 +74,9 @@ Then you need to initialize context game object in any place you want. I prefer 
         }
 
 ```
+
+
+
 Now you can see checkbox Entity mode on any EntityView object. It allows you to switch between standard and debug modes.
 
 ![img.png](img.png)
