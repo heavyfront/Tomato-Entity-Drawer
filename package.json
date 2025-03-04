@@ -5,7 +5,7 @@
   "description": "Visual debug instrument for tomato ECS",
   "unity": "2022.1",
   "dependencies": {
-    "https://github.com/natpuncher/tomato-ecs.git": "1.1.0"
+    "com.npg.tomato-ecs": "git+https://github.com/natpuncher/tomato-ecs.git"
   },
   "author": {
     "name": "Heavyfront"
